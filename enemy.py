@@ -43,10 +43,10 @@ class Enemy:
         Enemy move toward path points every frame
         :return: None
         """
-        now_x, now_y = self.path[self.path_index]                             # now point(x, y)
-        next_x, next_y = self.path[self.path_index + 1]                       # next point(x, y)
-        distance = math.sqrt((now_x - next_x)**2 + (now_y - next_y)**2)     # two point distance calculate
-        max_count = int(distance / self.stride)                             # two point need how many step
+        now_x, now_y = self.path[self.path_index]                               # now point(x, y)
+        next_x, next_y = self.path[self.path_index + 1]                         # next point(x, y)
+        distance = math.sqrt((now_x - next_x)**2 + (now_y - next_y)**2)         # two point distance calculate
+        max_count = int(distance / self.stride)                                 # two point need how many step
 
         if self.move_count < max_count:
             unit_vector_x = (next_x - now_x) / distance
@@ -67,11 +67,11 @@ class Enemy:
 
 class EnemyGroup:
     def __init__(self):
-        self.gen_count = 0              # count now frame after pre-enemy output
-        self.gen_max_count = 120           # (unit: frame)
-        self.reserved_members = []      # store enemies to the list when you push key n
-        self.expedition = [Enemy()]     # don't change this line until you do the EX.3
-        self.path_button = 0            # chose path's button
+        self.gen_count = 0                  # count now frame after pre-enemy output
+        self.gen_max_count = 120            # (unit: frame)
+        self.reserved_members = []          # store enemies to the list when you push key n
+        self.expedition = [Enemy()]         # don't change this line until you do the EX.3
+        self.path_button = 0                # chose path's button
 
     def campaign(self):
         """
