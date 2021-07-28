@@ -69,7 +69,7 @@ class EnemyGroup:
     def __init__(self):
         self.gen_count = 0              # count now frame after pre-enemy output
         self.gen_period = 120           # (unit: frame)
-        self.reserved_members = []
+        self.reserved_members = []      # store enemies to the list when you push key n
         self.expedition = [Enemy()]     # don't change this line until you do the EX.3
         self.path_button = 0            # chose path's button
 
@@ -99,7 +99,7 @@ class EnemyGroup:
             path = PATH2
             self.path_button = 0
 
-        # generate enemies into backend
+        # generate(store) enemies into backend
         for i in range(num):
             self.reserved_members.append(Enemy(path))
 
